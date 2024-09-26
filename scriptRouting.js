@@ -17,7 +17,23 @@ async function router() {
             const response = await fetch(route);
             if (response.ok) {
                 const content = await response.text();
-                document.getElementById('content').innerHTML = content; 
+                
+                document.getElementById('content').innerHTML = content;
+
+                const scripts = document.getElementById('content').getElementsByTagName('script');
+                for (let script of scripts) {
+                    const newScript = document.createElement('script');
+                    
+                    if (script.src) {
+                        newScript.src = script.src;
+                    } else {
+                        newScript.text = script.innerHTML;
+                    }
+                    
+                    document.body.appendChild(newScript);
+                    newScript.remove();
+                }
+
             } else {
                 console.error(`Failed to load ${route}: ${response.statusText}`);
                 document.getElementById('content').innerHTML = '<h1>404 Not Found</h1>';
