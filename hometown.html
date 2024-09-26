@@ -1,83 +1,54 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Arin's Website</title>
-        <link rel="stylesheet" href="design.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <section id="up"></section>
-        <section id="down"></section>
-        <section id="left"></section>
-        <section id="right"></section>
-        <header>
-            <h1 class="details">About Arin</h1>
-            <nav>
-                <a text-decoration:none href="quiz1.html">Home</a>
-                <a text-decoration:none href="profile.html">Profile</a>
-                <a text-decoration:none href="hometown.html">Hometown</a>
-                <a text-decoration:none href="food.html">Food</a>
-                <a text-decoration:none href="tourist.html">Tourist</a>
-            </nav>
-        </header>
-        <main>
-            <div class="wrapper">
-                <h1> All About My Hometown </h1>
-                <p> Though I was born in Serang, Indonesia- I resonate more with calling Al Ruways, Abu Dhabi, my hometown. It's a city I remember more of
-                    since I've lived there since I was three. It witnessed my firsts and lasts. First day of kindergarden, First fall from learning the bicycle, 
-                    Last day of highschool, Last day of ever living with my parents for a period of my life. </p> 
+<div class="wrapper">
+    <h1> All About My Hometown </h1>
+    <p> Though I was born in Serang, Indonesia- I resonate more with calling Al Ruways, Abu Dhabi, my hometown. It's a city I remember more of
+        since I've lived there since I was three. It witnessed my firsts and lasts. First day of kindergarden, First fall from learning the bicycle, 
+        Last day of highschool, Last day of ever living with my parents for a period of my life. </p> 
 
-            <!-- Slide container -->
-            <div class="slide-container">
-                <div class="slides">
-                    <img class="home" src="location.png"  width="300" height="500" style="width:100%">
-                </div>
-                <div class="slides">
-                    <img class="home" src="pic.png" width="300" height="500" style="width:100%">
-                </div>
-
-                <!-- Arrows for navigating the slides -->
-                <div class="left" onclick="plusDivs(-1)">&#10084;</div>
-                <div class="right" onclick="plusDivs(1)">&#10084;</div>
-
-                <!-- Dots for current slide indicator -->
-                <div class="display" style="text-align: center; margin-top: 10px;">
-                    <span class="border" onclick="currentDiv(1)"></span>
-                    <span class="border" onclick="currentDiv(2)"></span>
-                </div>
-            </div>
+        <!-- Slide container -->
+    <div class="slide-container">
+        <div class="slides">
+            <img class="home" src="img/location.png"  width="300" height="500" style="width:100%">
         </div>
-            <div class="info">
-                <h1>Motto(s): A city of life, leisure, and opportunities.</h1>
-                <p> From what was formally called "Al Ruwais", the city I grew up in has changed its name to Al Dhannah (Arabic: الظنة). Al Dhannah is a city located 240 km (150 mi) west of Abu Dhabi City, in the Western Region of the Emirate of Abu Dhabi. 
-                    
-                    The Al Dhannah/Ruwais industrial and housing complex has been developed by ADNOC as a major contributor 
-                    to the national economy and represents a series of multimillion-dollar investments by the company. Once a small fishing headland from which a handful of people scratched a seasonal living, Al Dhannah today is one of the most modern industrial complexes in the Middle East. </p> 
-            </div>
+        <div class="slides">
+            <img class="home" src="img/pic.png" width="300" height="500" style="width:100%">
         </div>
-            <div class="end"> 
-                <a href="https://www.instagram.com/nira2yn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="fa fa-instagram instagram"></a>
-                <a href="https://www.linkedin.com/in/arin7ur/" class="fa fa-linkedin linkedin"></a>
-                <a href="mailto: arininuraziz@gmail.com" class="fa fa-envelope gmail"></a>
-            </div>
-        </main>
-        <script>
-            let slideIndex = 1;
-            showDivs(slideIndex);
 
-            function plusDivs(n) {
-                showDivs(slideIndex += n);
-            }
+        <!-- Arrows for navigating the slides -->
+    <div class="left" onclick="plusDivs(-1)">&#10084;</div>
+    <div class="right" onclick="plusDivs(1)">&#10084;</div>
 
-            function currentDiv(n) {
-                showDivs(slideIndex = n);
-            }
+        <!-- Dots for current slide indicator -->
+    <div class="display" style="text-align: center; margin-top: 10px;">
+        <span class="border" onclick="currentDiv(1)"></span>
+        <span class="border" onclick="currentDiv(2)"></span>
+    </div>
+    </div>
+</div>
+            
+<div class="info">
+     <h1>Motto(s): A city of life, leisure, and opportunities.</h1>
+        <p> From what was formally called "Al Ruwais", the city I grew up in has changed its name to Al Dhannah (Arabic: الظنة). Al Dhannah is a city located 240 km (150 mi) west of Abu Dhabi City, in the Western Region of the Emirate of Abu Dhabi. 
+                The Al Dhannah/Ruwais industrial and housing complex has been developed by ADNOC as a major contributor 
+                to the national economy and represents a series of multimillion-dollar investments by the company. Once a small fishing headland from which a handful of people scratched a seasonal living, Al Dhannah today is one of the most modern industrial complexes in the Middle East. </p> 
+</div>
 
-            function showDivs(n) {
-                let i;
-                let slides = document.getElementsByClassName("slides");
-                let dots = document.getElementsByClassName("border");
-                if (n > slides.length) { slideIndex = 1 }
+<script>
+    let slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("border");
+        if (n > slides.length) { slideIndex = 1 }
                 if (n < 1) { slideIndex = slides.length }
                 for (i = 0; i < slides.length; i++) {
                     slides[i].style.display = "none";  
@@ -87,7 +58,6 @@
                 }
                 slides[slideIndex - 1].style.display = "block";  
                 dots[slideIndex - 1].className += " active";
-            }
-        </script>
-    </body>
-</html>
+        }
+</script>
+   
